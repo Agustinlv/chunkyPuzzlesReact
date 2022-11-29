@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
+*{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbarContainer{
+  display: flex;
+  justify-content: center;
+  background-color: beige;
+  height: 60px;
+  width: 100vw;
+  padding: 10px;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  width: 70vw;
+}
+
+.menuList{
+  display: flex;
+  justify-content: space-between;
+  width: 40vw;
+  text-transform: uppercase;
+}
+
+.cartIcon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 62px;
+  height: 49px;
+  background-image: url("./img/cart-icon.png");
+  background-size:contain;
+  font-size: large;
+  font-weight: 700;
+  color: white;
+  
+}
+
+.homeContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin: 50px;
+}
+
+.mainLogo{
+  width: 400px;
+}
+
+.footer{
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: goldenrod;
+  font-size: x-large;
+  font-weight: 600;
+  font-style: italic;
+  text-transform: uppercase;
+  width: 100vw;
+  height: 200px;
+  user-select: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .mainLogo {
+    animation-name: mainLogoSpin;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes mainLogoSpin {
+  0% {
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button{
+  border: 0;
+  background-color: rgba(0,0,0,0);
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  user-select: none;
+  cursor: pointer;
 }
