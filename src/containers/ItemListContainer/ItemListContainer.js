@@ -23,7 +23,7 @@ const ItemListContainer = () => {
                         <ul id='prodDescList'>
                             <li id='prodTitle'>{product.name}</li>
                             <li>${product.value}</li>
-                            <li>{product.count}</li>
+                            <li>{product.count} piezas</li>
                         </ul>
                         <div id='prodAction'>
                             <button className='addToCartButton'>detalle</button>

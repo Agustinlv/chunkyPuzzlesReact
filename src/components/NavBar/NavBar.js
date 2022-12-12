@@ -12,7 +12,6 @@ const NavBar = ()=>{
                     <ul className="menuList">
                         <Link to='/'><button className='menuButton'>inicio</button></Link>
                         <Link to='/detail'><button className='menuButton'>comprar</button></Link>
-                        <Link to='/login'><button className='menuButton'>login</button></Link>
                     </ul>
                     <Link to='/cart'><CartWidget itemCount = "0"/></Link>
                 </nav>

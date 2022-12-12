@@ -8,7 +8,6 @@
 .navbarContainer{
   display: flex;
   justify-content: center;
-  background-color: beige;
   height: 60px;
   width: 100vw;
   padding: 10px;
@@ -22,7 +21,7 @@
 
 .menuList{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   width: 40vw;
   text-transform: uppercase;
@@ -51,6 +50,7 @@
 }
 
 .mainLogo{
+  margin-top: 50px;
   width: 400px;
 }
 
@@ -103,10 +103,11 @@
   color: black;
   text-transform: uppercase;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
-  user-select: none;
   cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(88, 62, 32);
 }
 
 header{
@@ -128,6 +129,7 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: fit-content;
 }
 
 .menuBar{
@@ -144,14 +146,6 @@ main{
 .navLogo{
   height: 60px;
   image-rendering: crisp-edges;
-}
-
-.menuItem{
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 700;
-  color: rgb(88, 62, 32);
 }
 
 .welcomeHeader{
