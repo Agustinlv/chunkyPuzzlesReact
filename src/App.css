@@ -34,7 +34,7 @@
   align-items: center;
   width: 62px;
   height: 49px;
-  background-image: url("../src/img/cart-icon.png");
+  background-image: url("img/cart-icon.png");
   background-size:contain;
   font-size: large;
   font-weight: 700;
@@ -159,7 +159,7 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to left, rgba(0, 255, 115, 0.25), rgba(212, 0, 255, 0.1), rgba(255, 0, 0, 0.25)), url("../src/img/joker-van-gogh.png");
+  background-image: linear-gradient(to left, rgba(0, 255, 115, 0.25), rgba(212, 0, 255, 0.1), rgba(255, 0, 0, 0.25)), url("../public/img/joker-van-gogh.png");
   background-size: cover;
   height: 300px;
   width: 100vw;
@@ -171,7 +171,7 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to left, rgba(0, 255, 115, 0.25), rgba(212, 0, 255, 0.1), rgba(255, 0, 0, 0.25)), url("../src/img/gradient.png");
+  background-image: linear-gradient(to left, rgba(0, 255, 115, 0.25), rgba(212, 0, 255, 0.1), rgba(255, 0, 0, 0.25)), url("../public/img/gradient.png");
   background-size: cover;
   height: 150px;
   width: 100vw;
@@ -183,7 +183,7 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to left, rgba(0, 255, 115, 0.25), rgba(212, 0, 255, 0.1), rgba(255, 0, 0, 0.25)), url("../src/img/catrina.png");
+  background-image: linear-gradient(to left, rgba(0, 255, 115, 0.25), rgba(212, 0, 255, 0.1), rgba(255, 0, 0, 0.25)), url("../public/img/catrina.png");
   background-size: cover;
   height: 150px;
   width: 100vw;

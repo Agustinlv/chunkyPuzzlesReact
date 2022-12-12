@@ -4,7 +4,7 @@ const ItemListContainer = () => {
     const [products, setProduct] = useState([]);
 
     useEffect(()=>{
-        fetch('https://my-json-server.typicode.com/agustinlv/coderhousejavascript/products')
+        fetch('https://my-json-server.typicode.com/agustinlv/chunkyPuzzlesReact/products')
         .then(response => response.json())
         .then(data => setProduct(data));
     },[]);
@@ -17,7 +17,9 @@ const ItemListContainer = () => {
             <div id='catalogContainer'>
                 {products.map((product) => 
                     <div id='productContainer' key={product.id}>
-                        <div id='prodImgCont'><img src={product.image} alt="puzzle thumbnail"></img></div>
+                        <div id='prodImgCont'>
+                            <img src={product.image} alt="puzzle thumbnail"></img>
+                        </div>
                         <ul id='prodDescList'>
                             <li id='prodTitle'>{product.name}</li>
                             <li>${product.value}</li>
