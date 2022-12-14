@@ -1,6 +1,10 @@
-const CartWidget = (props)=>{
+import { useCartContext } from '../../context/CartContext';
+
+const CartWidget = () => {
+    const { cartSize } = useCartContext();
+
     return(
-        <div className="cartIcon">{props.itemCount}</div>
+        <div className="cartIcon">{cartSize}</div>
     );
 };
 

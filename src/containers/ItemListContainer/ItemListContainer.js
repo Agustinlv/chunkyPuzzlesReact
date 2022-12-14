@@ -1,12 +1,15 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
+import { useCartContext } from '../../context/CartContext';
+import { Link } from 'react-router-dom';
 
 const ItemListContainer = () => {
-    const [products, setProduct] = useState([]);
+    const [products, setProducts] = useState([]);
+    const { modifyCart } = useCartContext();
 
     useEffect(()=>{
         fetch('https://my-json-server.typicode.com/agustinlv/chunkyPuzzlesReact/products')
         .then(response => response.json())
-        .then(data => setProduct(data));
+        .then(data => setProducts(data));
     },[]);
 
     return(
@@ -26,14 +29,14 @@ const ItemListContainer = () => {
                             <li>{product.count} piezas</li>
                         </ul>
                         <div id='prodAction'>
-                            <button className='addToCartButton'>detalle</button>
-                            <button className='addToCartButton' id={product.id}>agregar al carrito</button>
+                            <Link to={`/detail/${product.id}`}><button className='addToCartButton'>detalle</button></Link>
+                            <button className='addToCartButton' onClick={() => modifyCart(product,"add")}>agregar al carrito</button>
                         </div>
                     </div>
                 )}
             </div>
         </main>
-    );
+    )
 }
 
 export default ItemListContainer;

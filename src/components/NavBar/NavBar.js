@@ -11,9 +11,9 @@ const NavBar = ()=>{
                     <img className="chunkyLogo" src={logo} alt="chunky puzzles logo"></img>
                     <ul className="menuList">
                         <Link to='/'><button className='menuButton'>inicio</button></Link>
-                        <Link to='/detail'><button className='menuButton'>comprar</button></Link>
+                        <Link to='/shop'><button className='menuButton'>comprar</button></Link>
                     </ul>
-                    <Link to='/cart'><CartWidget itemCount = "0"/></Link>
+                    <Link to='/cart'><CartWidget /></Link>
                 </nav>
             </div>
         </header>
