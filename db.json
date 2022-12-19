@@ -38,7 +38,7 @@
             "count": 500,
             "image": "/img/thumbs/leon-multicolor.png",
             "detail": "Machine cut, classic shape, cardboard puzzle.",
-            "detail-image": "/img/thumbs/wooden-puzzle.png"
+            "detail-image": "/img/thumbs/cardboard-puzzle.png"
         },
         {
             "id": 5,
@@ -48,7 +48,7 @@
             "count": 200,
             "image": "/img/thumbs/gradientes.png",
             "detail": "Machine cut, classic shape, cardboard puzzle.",
-            "detail-image": "/img/thumbs/wooden-puzzle.png"
+            "detail-image": "/img/thumbs/cardboard-puzzle.png"
         },
         {
             "id": 6,
@@ -58,7 +58,7 @@
             "count": 500,
             "image": "/img/thumbs/catrina.png",
             "detail": "Machine cut, classic shape, cardboard puzzle.",
-            "detail-image": "/img/thumbs/wooden-puzzle.png"
+            "detail-image": "/img/thumbs/cardboard-puzzle.png"
         }
     ],
     "profile": {
