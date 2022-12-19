@@ -217,6 +217,25 @@ main{
   font-size: 3rem;
 }
 
+.catalogContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+  width: 900px;
+  height: fit-content;
+}
+
+.categoryContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 80vw;
+  height: fit-content;
+}
+
 .categoryText{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-transform: uppercase;
@@ -224,6 +243,37 @@ main{
   user-select: none;
   font-size: 2rem;
 }
+
+.productsContainer{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: fit-content;
+}
+
+.dropdown{
+  position: relative;
+  display: flex;
+}
+
+.dropdownMenu{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  background-color: white;
+  border-radius: 5px;
+  width: 120px;
+  padding: 10px;
+  gap: 10px;
+}
+
+hr{
+  width: 900px;
+}
+
 
 #chunkyPuzzles{
   font-size: 3rem;
@@ -292,16 +342,6 @@ main{
 
 #loginButton:hover{
   cursor: pointer;
-}
-
-#catalogContainer{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 40px;
-  width: 900px;
-  height: fit-content;
 }
 
 #productContainer{
