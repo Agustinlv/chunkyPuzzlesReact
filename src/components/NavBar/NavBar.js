@@ -12,6 +12,7 @@ const NavBar = ()=>{
                     <ul className="menuList">
                         <Link to='/'><button className='menuButton'>inicio</button></Link>
                         <Link to='/shop'><button className='menuButton'>comprar</button></Link>
+                        <Link to='/login'><button className='menuButton'>login</button></Link>
                     </ul>
                     <Link to='/cart'><CartWidget /></Link>
                 </nav>

@@ -2,56 +2,62 @@
     "products":[
         {
             "id": 1,
+            "tipo": "wooden",
             "name": "joker",
             "value": 4500,
             "count": 200,
             "image": "/img/thumbs/joker-van-gogh.png",
-            "detail": "Hand designed, non classic shape, wooden puzzle.",
+            "detail": "Hand designed, laser cut, non classic shape, wooden puzzle.",
             "detail-image": "/img/thumbs/wooden-puzzle.png"
         },
         {
             "id": 2,
+            "tipo": "wooden",
             "name": "gato pop",
             "value": 3500,
             "count": 250,
             "image": "/img/thumbs/gato-pop.png",
-            "detail": "Hand designed, non classic shape, wooden puzzle.",
+            "detail": "Hand designed, laser cut, non classic shape, wooden puzzle.",
             "detail-image": "/img/thumbs/wooden-puzzle.png"
         },
         {
             "id": 3,
+            "tipo": "wooden",
             "name": "lapices de colores",
             "value": 3000,
             "count": 220,
             "image": "/img/thumbs/lapices.png",
-            "detail": "Hand designed, non classic shape, wooden puzzle.",
+            "detail": "Hand designed, laser cut, non classic shape, wooden puzzle.",
             "detail-image": "/img/thumbs/wooden-puzzle.png"
         },
         {
             "id": 4,
+            "tipo": "cardboard",
             "name": "leon multicolor",
             "value": 4000,
             "count": 500,
             "image": "/img/thumbs/leon-multicolor.png",
-            "detail": "Hand designed, non classic shape, wooden puzzle.",
+            "detail": "Machine cut, classic shape, cardboard puzzle.",
             "detail-image": "/img/thumbs/wooden-puzzle.png"
         },
         {
             "id": 5,
+            "tipo": "cardboard",
             "name": "gradientes",
             "value": 3500,
             "count": 200,
             "image": "/img/thumbs/gradientes.png",
-            "detail": "Hand designed, non classic shape, wooden puzzle.",
+            "detail": "Machine cut, classic shape, cardboard puzzle.",
             "detail-image": "/img/thumbs/wooden-puzzle.png"
         },
         {
             "id": 6,
+            "tipo": "cardboard",
             "name": "catrina",
             "value": 6000,
             "count": 500,
             "image": "/img/thumbs/catrina.png",
-            "detail": "Hand designed, non classic shape, wooden puzzle.",
+            "detail": "Machine cut, classic shape, cardboard puzzle.",
             "detail-image": "/img/thumbs/wooden-puzzle.png"
         }
     ],

@@ -559,3 +559,9 @@ p{
   text-transform: uppercase;
   font-weight: 600;
 }
+
+.loadingMessage{
+  margin-top: 50px;
+  font-size: 2rem;
+  color: rgb(80, 80, 80);
+}

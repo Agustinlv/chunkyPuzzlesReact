@@ -1,16 +1,34 @@
 import { useState, useEffect } from 'react';
 import { useCartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
+import Loading from '../../components/Loading/Loading';
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
     const { modifyCart } = useCartContext();
 
     useEffect(()=>{
         fetch('https://my-json-server.typicode.com/agustinlv/chunkyPuzzlesReact/products')
         .then(response => response.json())
-        .then(data => setProducts(data));
+        .then(data => setProducts(data))
+        .finally(() => setLoading(false));
     },[]);
+
+    if (loading) {
+        return(
+            <>
+                <main>
+                    <div className="detailHeader">
+                        <h1 className="buyText">detalle</h1>
+                    </div>
+                    <div className='itemDetailContainer'>
+                        <Loading />
+                    </div>
+                </main>
+            </>
+        );
+    };
 
     return(
         <main>
@@ -36,7 +54,7 @@ const ItemListContainer = () => {
                 )}
             </div>
         </main>
-    )
-}
+    );
+};
 
 export default ItemListContainer;
