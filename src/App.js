@@ -21,6 +21,7 @@ function App() {
         <Routes>
           <Route path='/' element={<HomeContainer props={props}/>} />
           <Route path='/shop' element={<ItemListContainer />} />
+          <Route path='/shop/:productType' element={<ItemListContainer />} />
           <Route path='/cart' element={<CartContainer />}/>
           <Route path='*' element={<Navigate to='/' />} />
           <Route path='/detail/:productId' element={<ItemDetailContainer />} />

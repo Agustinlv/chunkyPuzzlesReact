@@ -2,7 +2,7 @@
     "products":[
         {
             "id": 1,
-            "tipo": "wooden",
+            "type": "wooden",
             "name": "joker",
             "value": 4500,
             "count": 200,
@@ -12,7 +12,7 @@
         },
         {
             "id": 2,
-            "tipo": "wooden",
+            "type": "wooden",
             "name": "gato pop",
             "value": 3500,
             "count": 250,
@@ -22,7 +22,7 @@
         },
         {
             "id": 3,
-            "tipo": "wooden",
+            "type": "wooden",
             "name": "lapices de colores",
             "value": 3000,
             "count": 220,
@@ -32,7 +32,7 @@
         },
         {
             "id": 4,
-            "tipo": "cardboard",
+            "type": "cardboard",
             "name": "leon multicolor",
             "value": 4000,
             "count": 500,
@@ -42,7 +42,7 @@
         },
         {
             "id": 5,
-            "tipo": "cardboard",
+            "type": "cardboard",
             "name": "gradientes",
             "value": 3500,
             "count": 200,
@@ -52,7 +52,7 @@
         },
         {
             "id": 6,
-            "tipo": "cardboard",
+            "type": "cardboard",
             "name": "catrina",
             "value": 6000,
             "count": 500,
