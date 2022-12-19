@@ -14,8 +14,8 @@ const NavBar = ()=>{
                     <div className="menuList">
                         <Link to='/'><button className='menuButton'>inicio</button></Link>
                         <Link to='/shop'><button className='menuButton'>todos</button></Link>
-                        <Link to='/shop/wooden'><button className='menuButton'>madera</button></Link>
-                        <Link to='/shop/cardboard'><button className='menuButton'>carton</button></Link>
+                        <Link to='/shop/madera'><button className='menuButton'>madera</button></Link>
+                        <Link to='/shop/carton'><button className='menuButton'>carton</button></Link>
                         <Link to='/login'><button className='menuButton'>login</button></Link>
                     </div>
                     <Link to='/cart'><CartWidget /></Link>
