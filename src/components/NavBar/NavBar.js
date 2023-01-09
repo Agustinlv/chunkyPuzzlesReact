@@ -1,46 +1,55 @@
 import { Link } from 'react-router-dom';
-import {useState} from 'react';
 import logo from '../../img/chunky-logo-header.png';
 import CartWidget from '../CartWidget/CartWidget';
+import MenuItems from '../MenuItems/MenuItems';
 
 const NavBar = ()=>{
-    const [menuStatus, setMenuStatus] = useState(false);
-
-    const changeMenuStatus = () => {
-        setMenuStatus(!menuStatus);
-    }
-
+    const menuItems = [
+        {
+            "label": "inicio",
+            "path": "/",
+            "submenu": []
+        },
+        {
+            "label": "catalogo",
+            "path": "",
+            "submenu": [
+                {
+                    "label": "todos los productos",
+                    "path": "/shop",
+                    "submenu": []
+                },
+                {
+                    "label": "puzzles de madera",
+                    "path": "/shop/madera",
+                    "submenu": []
+                },
+                {
+                    "label": "puzzles de cartón",
+                    "path": "/shop/carton",
+                    "submenu": []
+                }
+            ]
+        }
+    ]
+    
     return(
         <header>
-            <div className="navbarContainer">
+            <div className="navbar-container">
                 <nav className="navbar">
-                    <img className="chunkyLogo" src={logo} alt="chunky puzzles logo"></img>
-                    <div className="menuList">
-                        <Link to='/'><button className='menuButton'>inicio</button></Link>
-                        <button className='menuButton' onClick={changeMenuStatus}>comprar</button>
-                        {menuStatus ?
-                            <div className='dropdown'>
-                                <ul className='dropdownMenu'>
-                                    <li>
-                                        <Link to='/shop'><button className='menuButton' onClick={changeMenuStatus}>todos</button></Link>
-                                    </li>
-                                    <li>
-                                        <Link to='/shop/madera'><button className='menuButton' onClick={changeMenuStatus}>madera</button></Link>
-                                    </li>
-                                    <li>
-                                        <Link to='/shop/carton'><button className='menuButton' onClick={changeMenuStatus}>carton</button></Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        :
-                            null
+                    <img className="navbar-logo" src={logo} alt="chunky puzzles logo"></img>
+                    <ul className="menu-bar">
+                        {
+                            menuItems.map((item, index) => {
+                                return <MenuItems items={item} key={index} />
+                            })
                         }
-                    </div>
-                    <Link to='/cart'><CartWidget /></Link>
+                    </ul>
+                    <Link to='/cart' className='cart-container'><CartWidget /></Link>
                 </nav>
             </div>
         </header>
-    );
+    )
 };
 
 export default NavBar;

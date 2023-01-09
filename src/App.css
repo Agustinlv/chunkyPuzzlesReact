@@ -5,12 +5,19 @@
   box-sizing: border-box;
 }
 
-.navbarContainer{
+header{
   display: flex;
   justify-content: center;
-  height: 60px;
+  align-items: center;
+  background-color: rgb(235, 230, 207);
   width: 100vw;
-  padding: 10px;
+}
+
+.navbar-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
 }
 
 .navbar{
@@ -19,24 +26,76 @@
   width: 70vw;
 }
 
-.menuList{
+.navbar-logo{
+  height: 60px;
+  image-rendering: crisp-edges;
+}
+
+.menu-bar{
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 40vw;
-  text-transform: uppercase;
+  list-style: none;
 }
 
-.cartIcon{
+.menu-button{
+  border: 0;
+  background-color: rgba(0,0,0,0);
+  color: rgb(88, 62, 32);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dropdown{
+  position: absolute;
+  display: none;
+  top: 50px;
+  flex-direction: column;
+  background-color: white;
+  list-style: none;
+  border-radius: 5px;
+  width: 220px;
+  padding: 10px;
+  gap: 10px;
+  z-index: 1;
+}
+
+.dropdown.show{
+  display: flex;
+}
+
+.dropdown-item{
+  border: 0;
+  color: black;
+  background-color: rgba(0,0,0,0);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.65rem;
+  cursor: pointer;
+}
+
+.cart-container{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 48px;
+}
+
+.cart-widget{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 68px;
+  height: 53px;
   background-image: url("img/cart-icon.png");
   background-repeat: no-repeat;
   background-size: contain;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 700;
   color: white;
   user-select: none;
@@ -100,33 +159,6 @@
   }
 }
 
-.menuButton{
-  border: 0;
-  background-color: rgba(0,0,0,0);
-  color: black;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: rgb(88, 62, 32);
-}
-
-header{
-  height: 64px;
-  width: 100vw;
-  padding: 10px;
-  background-color: rgb(235, 230, 207);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-style: solid;
-  border: 1px solid rgb(230, 190, 59);
-  border-left: 0px;
-  border-right: 0px;
-}
-
 main{
   display: flex;
   flex-direction: column;
@@ -144,11 +176,6 @@ main{
   align-items: center;
   gap: 10px;
   user-select: none;
-}
-
-.navLogo{
-  height: 60px;
-  image-rendering: crisp-edges;
 }
 
 .welcomeHeader{
@@ -251,97 +278,13 @@ main{
   height: fit-content;
 }
 
-.dropdown{
-  position: relative;
-  display: flex;
-}
-
-.dropdownMenu{
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  background-color: white;
-  border-radius: 5px;
-  width: 120px;
-  padding: 10px;
-  gap: 10px;
-}
-
 hr{
   width: 900px;
 }
 
-
 #chunkyPuzzles{
   font-size: 3rem;
   font-weight: 700;
-}
-
-#carritoMenuItem{
-  display: none;
-}
-
-#comprarMenuItem{
-  display: none;
-}
-
-#loginData{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 300px;
-  height: 100px;
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-
-.loginInputs{
-  display: flex;
-  justify-content: space-between;
-}
-
-.loginLabel{
-  text-transform: uppercase;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: small;
-}
-
-.loginActions{
-  display: flex;
-  justify-content: center;
-}
-
-#loginMessage{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 12px;
-  color: red;
-  height: 20px;
-  margin-top: 20px;
-}
-
-#loginButton{
-  display: flex;
-  justify-content: center;
-  background-color: lightgray;
-  padding: 10px 15px 10px 15px;
-  border-radius: 5px;
-  margin-top: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: small;
-  user-select: none;
-}
-
-#loginButton:hover{
-  cursor: pointer;
 }
 
 #productContainer{
@@ -356,7 +299,7 @@ hr{
   gap: 10px;
   border-color: rgb(90, 90, 90);
   border-style:solid;
-  border-width: 1px;
+  border-width: 2px;
   border-radius: 5px;
   user-select: none;
 }
@@ -403,47 +346,18 @@ hr{
 
 .cartContainer{
   display: flex;
+  justify-content: center;
+  width: 80vw;
   padding: 20px;
-  justify-content: space-between;
   gap: 20px;
 }
 
-#cartItemContainer{
+.cartItemContainer{
   display: flex;
   flex-direction: column;
-  width: 600px;
+  width: fit-content;
   height: fit-content;
   gap: 10px;
-}
-
-#cartDetail{
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 250px;
-  height: fit-content;
-  border: 2px solid grey;
-  border-radius: 5px;
-  background-color: rgb(252, 247, 221);
-  padding: 10px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-#checkoutBtn{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding: 10px 15px 10px 15px;
-}
-
-.cartDetailTitle{
-  display: flex;
-  justify-content: center;
-  color: rgb(88, 62, 32);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.25rem;
-  text-transform: uppercase;
 }
 
 .cartItem{
@@ -453,31 +367,24 @@ hr{
   background-color: rgb(230, 230, 230);;
   border: 2px solid grey;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
+  gap: 10px;
   height: fit-content;
 }
 
-#cartItemImg{
+.cartItem img{
   height: 80px;
 }
 
-#cartDescCont{
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  gap: 40px;
-}
-
-#cartItemName{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.cartItem p{
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1rem;
   text-transform: uppercase;
 }
 
-.cartItemDesc ul{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.cartItem ul{
   text-transform: uppercase;
+  font-size: 0.85rem;
   list-style: none;
 }
 
@@ -496,7 +403,7 @@ hr{
   gap: 10px;
 }
 
-.cartModifyButton{
+.cartModify button{
   font-size: 1rem;
   height: 30px;
   width: 30px;
@@ -507,7 +414,7 @@ hr{
   font-weight: 700;
 }
 
-.cartRemoveButton{
+.cartRemove button{
   font-size: 0.65rem;
   height: 30px;
   width: 90px;
@@ -518,64 +425,77 @@ hr{
   font-weight: 600;
 }
 
+.cartDetailContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: fit-content;
+  height: fit-content;
+  border: 2px solid grey;
+  border-radius: 5px;
+  background-color: rgb(252, 247, 221);
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+.cartDetailContainer p{
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.cartDetailContainer ul{
+  list-style: none;
+  font-size: 0.75rem;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align:end;
+}
+
+.cartDetailContainer button{
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding: 5px 15px 5px 15px;
+}
+
+#cartDescCont{
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 40px;
+}
+
 #cartItmQty{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 0.85rem;
   border: 1px solid gray;
   width: 30px;
   height: 30px;
 }
 
-
 #cartDetailMessage{
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
   text-transform: uppercase;
-}
-
-p{
-  margin: 40px;
-  width: 400px;
-  text-transform: uppercase;
-  text-align: justify;
-  font-size: 0.75rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .cartMessage{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
   color: rgb(80, 80, 80);
   margin-top: 80px;
-}
-
-#cartTotalTitle{
-  font-size: 1rem;
-  font-weight: 600;
-  font-style: italic;
-  margin-top: 10px;
-}
-
-#cartTotalValue{
-  display: flex;
-  align-items: flex-end;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: green;
-  margin: 10px 0px 10px 0px;
 }
 
 .itemDetailContainer{
@@ -584,28 +504,48 @@ p{
   justify-content: center;
   align-items: center;
   margin-top: 60px;
-  gap: 40px;
+  width: 70vw;
+  gap: 20px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.itemDetailContainer button{
+  height: 30px;
+  width: 200px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.itemDetailContainer form{
+  display: flex;
+  gap: 30px;
+  font-weight: 400;
 }
 
 .itemDescriptionContainer{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 20px;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
+  width: 70vw;
+  padding: 20px;
+  line-height: 2rem;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: rgb(50, 50, 50);
+  border-style: solid;
 }
 
-.itemDescriptionList{
+.itemDescriptionContainer ul{
   list-style: none;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.3rem;
 }
 
-.backToShopButton{
-  height: 30px;
-  width: 120px;
-  text-transform: uppercase;
-  font-weight: 600;
+.itemDescriptionContainer p{
+  padding: 20px;
 }
 
 .loadingMessage{

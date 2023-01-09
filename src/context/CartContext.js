@@ -7,43 +7,69 @@ export const useCartContext = () => useContext(CartContext);
 export const CartContextProvider = ({children}) => {
     const [cart, setCart] = useState([]);
     const [cartSize, setCartSize] = useState(0);
-
-    const modifyCart = (product, action) => {
+    const [cartTotalValue, setCartTotalValue] = useState(0);
+    const [checkedOut, setCheckedOut] = useState(false);
+    
+    const modifyCart = (action, product=[], quantity=1) => {
+        //Primero salvo el cart actual en una variable
         let tempCart = cart;
+        //Luego filtro el cart temporario buscando la existencia del producto
         let tempProduct = tempCart.find(obj => obj.id === product.id);
+        
+        switch(action){
+            case "add":
+                if(tempProduct)
+                {
+                    tempProduct.quantity = tempProduct.quantity + quantity;
+                    tempCart.filter(obj => obj.id !== tempProduct.id).push(tempProduct);
+                }
+                //Si no existe, entonces pusheo el producto al cart y la cantidad es igual a 1
+                else
+                {   
+                    product.quantity = quantity;
+                    tempCart.push(product);
+                };
 
-        if(action === "add"){
-            if(tempProduct){
-                tempProduct.quantity++;
-                tempCart.filter(obj => obj.id !== tempProduct.id).push(tempProduct);
-            }
-            else
-            {
-                product.quantity = 1;
-                tempCart.push(product);
-            };
-        };
-
-        if(action === "remove"){
-            if(tempProduct.quantity > 1){
-                tempProduct.quantity--;
-                tempCart.filter(obj => obj.id !== tempProduct.id).push(tempProduct);
-            }
+                setCheckedOut(false);
+                
+                break;
+            case "remove":
+                if(tempProduct.quantity > 1)
+                {
+                    tempProduct.quantity--;
+                    tempCart.filter(obj => obj.id !== tempProduct.id).push(tempProduct);
+                };
+                
+                break;
+            case "clear": 
+                tempCart = tempCart.filter(obj => obj.id !== tempProduct.id);
+                
+                break;
+            case "checkout": 
+                tempCart = [];
+                
+                setCheckedOut(true);
+                
+                break;
+            default:
+                console.log("No action was passed");
+                
+                break;
         };
         
-        if(action === "clear"){
-            tempCart = tempCart.filter(obj => obj.id !== tempProduct.id);
-        };
-
         setCart(tempCart);
-        
-        setCartSize(tempCart.reduce((acc, curr) => acc + curr.quantity, 0));
-    };
 
+        setCartSize(tempCart.reduce((acc, curr) => acc + curr.quantity, 0));
+    
+        setCartTotalValue(tempCart.reduce((acc, curr) => acc + curr.quantity * curr.price, 0));
+    };
+    
     return (
         <CartContext.Provider value={{
             cart,
             cartSize,
+            cartTotalValue,
+            checkedOut,
             modifyCart
         }}>
             {children};

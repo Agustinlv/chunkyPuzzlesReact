@@ -1,7 +1,7 @@
 import { useCartContext } from "../../context/CartContext";
 
 const CartContainer = () => {
-    const {cart, modifyCart} = useCartContext();
+    const {cart, cartTotalValue, checkedOut, modifyCart} = useCartContext();
 
     return(
         <>
@@ -13,33 +13,47 @@ const CartContainer = () => {
                     {
                         cart.length === 0 ?
                         <div className="cartMessage">
-                            El carrito está vacío
+                            {
+                                checkedOut ? "gracias por su compra" : "el carrito está vacío"
+                            }
                         </div>
                         :
-                        <div id="cartItemContainer">
-                            {cart.map((product)=>
-                                <div className="cartItem" key={product.id}>
-                                    <img id="cartItemImg" src={product.image} alt={product.name}></img>
-                                    <div id="cartItemName">{product.name}</div>
-                                    <div className="cartItemDesc">
+                        <>
+                            <div className="cartItemContainer">
+                                {cart.map((product, idx)=>
+                                    <div className="cartItem" key={idx}>
+                                        <img src={product.image} alt={product.name}></img>
+                                        <p>{product.name}</p>
                                         <ul>
-                                            <li>${product.value}</li>
-                                            <li>{product.count} piezas</li>
+                                            <li>${product.price}</li>
+                                            <li>{product.pieces} piezas</li>
                                         </ul>
-                                    </div>
-                                    <div className="cartQtyCont">
-                                        <div className="cartModify">
-                                            <button className="cartModifyButton" onClick={()=> modifyCart(product,"remove")}>-</button>
-                                            <div>{product.quantity}</div>
-                                            <button className="cartModifyButton" onClick={()=> modifyCart(product,"add")}>+</button>
+                                        <div className="cartQtyCont">
+                                            <div className="cartModify">
+                                                <button onClick={()=> modifyCart("remove", product)}>-</button>
+                                                <div>{product.quantity}</div>
+                                                <button onClick={()=> modifyCart("add", product)}>+</button>
+                                            </div>
+                                            <div className="cartRemove">
+                                                <button onClick={()=> modifyCart("clear", product)}>eliminar</button>
+                                            </div>
                                         </div>
-                                        <div className="cartRemove">
-                                            <button className="cartRemoveButton" onClick={()=> modifyCart(product,"clear")}>remove</button>
-                                        </div>
                                     </div>
-                                </div>
-                            )}
-                        </div>
+                                )}
+                            </div>
+                            <div className="cartDetailContainer">
+                                <p>detalle de compra</p>
+                                <ul>
+                                    {
+                                        cart.map((product,idx)=>
+                                            <li key={idx}>{product.name} x {product.quantity} = ${product.price * product.quantity}</li>
+                                        )
+                                    }
+                                </ul>
+                                <p>total {cartTotalValue}</p>
+                                <button onClick={() => modifyCart("checkout")}>pagar</button>
+                            </div>
+                        </>
                     }
                 </div>
             </main>

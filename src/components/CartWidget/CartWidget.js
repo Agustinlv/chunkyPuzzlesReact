@@ -4,7 +4,7 @@ const CartWidget = () => {
     const { cartSize } = useCartContext();
 
     return(
-        <div className="cartIcon">{cartSize}</div>
+        <div className="cart-widget">{cartSize}</div>
     );
 };
 
