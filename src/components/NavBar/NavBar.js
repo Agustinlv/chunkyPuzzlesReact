@@ -1,51 +1,26 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../img/chunky-logo-header.png';
 import CartWidget from '../CartWidget/CartWidget';
-import MenuItems from '../MenuItems/MenuItems';
 
 const NavBar = ()=>{
-    const menuItems = [
-        {
-            "label": "inicio",
-            "path": "/",
-            "submenu": []
-        },
-        {
-            "label": "catalogo",
-            "path": "",
-            "submenu": [
-                {
-                    "label": "todos los productos",
-                    "path": "/shop",
-                    "submenu": []
-                },
-                {
-                    "label": "puzzles de madera",
-                    "path": "/shop/madera",
-                    "submenu": []
-                },
-                {
-                    "label": "puzzles de cartón",
-                    "path": "/shop/carton",
-                    "submenu": []
-                }
-            ]
-        }
-    ]
-    
+    const [ dropdownState, setDropdownState] = useState(false);
+
     return(
         <header>
             <div className="navbar-container">
                 <nav className="navbar">
                     <img className="navbar-logo" src={logo} alt="chunky puzzles logo"></img>
                     <ul className="menu-bar">
-                        {
-                            menuItems.map((item, index) => {
-                                return <MenuItems items={item} key={index} />
-                            })
-                        }
+                        <Link to="/"><button className="menu-button" onClick={()=>setDropdownState(false)}>inicio</button></Link>
+                        <button className="menu-button" onClick={()=>setDropdownState(prev => !prev)}>catalogo</button>
+                        <ul className={`dropdown${dropdownState ? " show":""}`} onClick={()=>setDropdownState(prev => !prev)}>
+                            <Link to="/shop"><button className="menu-button">todos los productos</button></Link>
+                            <Link to="/shop/madera"><button className="menu-button">puzzles de madera</button></Link>
+                            <Link to="/shop/carton"><button className="menu-button">puzzles de carton</button></Link>
+                        </ul>
                     </ul>
-                    <Link to='/cart' className='cart-container'><CartWidget /></Link>
+                    <Link to='/cart' className='cart-container' onClick={()=>setDropdownState(false)}><CartWidget /></Link>
                 </nav>
             </div>
         </header>

@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
         const ref = doc(db, 'products', productId);
         getDoc(ref)
         .then(data => data.data())
-        .then(data => ({ ...data, id: productId}))
+        .then(data => ({ ...data, id: productId}))//Le tengo que agregar la propiedad id porque cuando se ejecuta el query por product id, la respuesta me trae todas las propiedades de dicho elemento, menos el id
         .then(data => setProduct(data))
         .finally(() => setLoading(false));
     },[productId]);

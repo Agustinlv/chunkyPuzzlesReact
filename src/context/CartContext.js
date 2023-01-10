@@ -9,6 +9,18 @@ export const CartContextProvider = ({children}) => {
     const [cartSize, setCartSize] = useState(0);
     const [cartTotalValue, setCartTotalValue] = useState(0);
     const [checkedOut, setCheckedOut] = useState(false);
+    const [dropdownStates, setDropdownStates] = useState([false, false]);
+    
+    //Aprovecho el cartcontext para sumar una función que me controla el estado de los menúes dropdown
+    const changeDropdownState = (index, state) => {
+        let tempStates = dropdownStates;
+        
+        tempStates[index] = state;
+
+        setDropdownStates(tempStates);
+
+        console.log(dropdownStates);
+    };
     
     const modifyCart = (action, product=[], quantity=1) => {
         //Primero salvo el cart actual en una variable
@@ -70,7 +82,9 @@ export const CartContextProvider = ({children}) => {
             cartSize,
             cartTotalValue,
             checkedOut,
-            modifyCart
+            dropdownStates,
+            modifyCart,
+            changeDropdownState
         }}>
             {children};
         </CartContext.Provider>
